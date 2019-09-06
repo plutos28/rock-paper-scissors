@@ -14,17 +14,13 @@ function playRound(playerSelection, computerSelection) {
         return "You Lose! Paper beats Rock";
     }  else if ((playerSelection == "rock") && (computerSelection == "rock")) {
         return "It's a tie!";
-    } 
-    
-    if((playerSelection == "scissors") && (computerSelection == "paper")) {
+    }  else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
         return "You Win! Scissors beats Paper";
     } else if ((playerSelection == "scissors") && (computerSelection == "rock")) {
         return "You Lose! Rock beats Scissors";
     }  else if ((playerSelection == "scissors") && (computerSelection == "scissors")) {
         return "It's a tie!";
-    } 
-
-    if((playerSelection == "paper") && (computerSelection == "rock")) {
+    } else if((playerSelection == "paper") && (computerSelection == "rock")) {
         return "You Win! Paper beats Scissors";
     } else if ((playerSelection == "paper") && (computerSelection == "scissors")) {
         return "You Lose! Scissors beats Paper";
