@@ -30,3 +30,7 @@ function playRound(playerSelection, computerSelection) {
         return "It's a tie!";
     } 
 }
+
+const playerSelection = "paper";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
