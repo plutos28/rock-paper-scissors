@@ -8,6 +8,8 @@ function getRandomNumber(max) {
 }
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+
     if((playerSelection == "rock") && (computerSelection == "scissors")) {
         return "You Win! Rock beats Scissors";
     } else if ((playerSelection == "rock") && (computerSelection == "paper")) {
