@@ -37,12 +37,16 @@ function game() {
 
     console.log(playRound(playerSelection, computerSelection));
     playerSelection = prompt("What's your choice?: ");
+    computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
     playerSelection = prompt("What's your choice?: ");
+    computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
     playerSelection = prompt("What's your choice?: ");
+    computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
     playerSelection = prompt("What's your choice?: ");
+    computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
 }
 
