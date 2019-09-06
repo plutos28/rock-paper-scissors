@@ -31,6 +31,18 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-const playerSelection = "paper";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    let playerSelection = prompt("What's your choice?: ");
+    let computerSelection = computerPlay();
+
+    console.log(playRound(playerSelection, computerSelection));
+    playerSelection = prompt("What's your choice?: ");
+    console.log(playRound(playerSelection, computerSelection));
+    playerSelection = prompt("What's your choice?: ");
+    console.log(playRound(playerSelection, computerSelection));
+    playerSelection = prompt("What's your choice?: ");
+    console.log(playRound(playerSelection, computerSelection));
+    playerSelection = prompt("What's your choice?: ");
+    console.log(playRound(playerSelection, computerSelection));
+}
+
