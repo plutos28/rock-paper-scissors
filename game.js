@@ -38,10 +38,8 @@ function createRound() {
 }
 
 function game() {
-    createRound();
-    createRound();
-    createRound();
-    createRound();
-    createRound();
+    for(let i=0; i < 5; i++) {
+        createRound();
+    }
 }
 
