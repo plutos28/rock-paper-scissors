@@ -46,7 +46,8 @@ main {
 }
 
 #match-result {
-    grid-column: 4 / 5;
+    grid-column: 3 / 6;
     grid-row: 2 / 3;
     justify-self: center;
+    font-size: 1.5em;
 }
