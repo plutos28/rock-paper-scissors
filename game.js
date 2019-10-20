@@ -32,11 +32,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function createRound() {
-    const playerSelection = prompt("What's your choice?: ")
-    const computerSelection = computerPlay()
-    alert(playRound(playerSelection, computerSelection))
-}
-
-
+const playerButtons = document.querySelectorAll('.player-btn');
+playerButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        console.log(playRound(btn.id, computerPlay()))
+    })
+})
 
