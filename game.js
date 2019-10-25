@@ -33,12 +33,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function resetGame() {
+
+}
+
 const playerButtons = document.querySelectorAll('.player-btn');
+
+// these variables only take care of displaying the final results 
 const playerScoreDisplay = document.querySelector('#player-score > span');
 const computerScoreDisplay = document.querySelector('#computer-score > span');
 const tieScoreDisplay = document.querySelector('#tie-score > span');
 const result = document.querySelector('#match-result');
 
+// these variables are used to keep track of the variables 
+// and will later be append to the display variables 
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
@@ -59,6 +67,13 @@ playerButtons.forEach((btn) => {
         } else {
             tieScore++;
             tieScoreDisplay.textContent = tieScore;
+        }
+
+        // check for winning condition of 5 wins
+        if(playerScore == 5) {
+            if(confirm("Player wins")) resetGame();
+        } else if(computerScore == 5) {
+            if(confirm("Computer wins")) resetGame();
         }
     });
 });
