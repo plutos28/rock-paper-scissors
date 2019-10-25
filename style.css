@@ -22,7 +22,26 @@ h1 {
 main {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(3, 200px);
+    grid-template-rows: 50px repeat(3, 200px);
+}
+
+.score {
+    text-align: center;
+    align-self: center;
+    font-size: 1.2em;
+}
+
+#player-score {
+    grid-column: 2 / 3;
+}
+
+#tie-score {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+
+#computer-score {
+    grid-column: 6 / 7;
 }
 
 .player-btn {
@@ -35,19 +54,23 @@ main {
 
 #rock {
     grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
 
 #paper {
     grid-column: 4 / 5;
+    grid-row: 2 / 3;
 }
 
 #scissors {
     grid-column: 6 / 7;
+    grid-row: 2 / 3;
 }
 
 #match-result {
     grid-column: 3 / 6;
-    grid-row: 2 / 3;
+    grid-row: 3;
     justify-self: center;
+    margin-top: 30px;
     font-size: 1.5em;
 }
