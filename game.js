@@ -30,11 +30,9 @@ function playRound(playerSelection, computerSelection) {
         return ["You Lose! Scissors beats Paper", "computer"];
     }else if(playerSelection == "paper" && computerSelection == "paper") {
         return ["It's a tie!", "none"];
+    } else {
+        return ['mistake', 'mistake']
     }
-}
-
-function resetGame() {
-    // TODO: should reset all scores back to zero
 }
 
 const playerButtons = document.querySelectorAll('.player-btn');
@@ -52,26 +50,37 @@ let computerScore = 0;
 let tieScore = 0;
 
 playerButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        const currentRound = playRound(e.target.id, calcComputerPlay());
-        result.textContent = currentRound[0];
-
-        // increment the score and update the display
-        if(currentRound[1] == 'player') {
-            playerScore++;
-            playerScoreDisplay.textContent = playerScore;
-        } else if(currentRound[1] == 'computer') {
-            computerScore++;
-            computerScoreDisplay.textContent = computerScore;
-        } else {
-            tieScore++;
-            tieScoreDisplay.textContent = tieScore;
-        }
-            // check for winning condition of 5 wins
-        if(playerScore == winCondition) {
-            return true;
-        } else if(computerScore == winCondition) {
-            return false;
-        }
-    });
+    btn.addEventListener('click', game);
 });
+
+function game(e) {
+    let currentRound = playRound(this.id, calcComputerPlay());
+    result.textContent = currentRound[0];
+    console.log(this.id)
+
+    // increment the score and update the display from winner
+    if(currentRound[1] == 'player') {
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
+    } else if(currentRound[1] == 'computer') {
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
+    } else {
+        tieScore++;
+        tieScoreDisplay.textContent = tieScore;
+    }
+
+    // check for winning condition of 5 wins
+    if(playerScore == 5) {
+        alert("Player Wins");
+        // reset all scores
+        playerScore = 0;
+        computerScore = 0;
+        tieScore = 0;
+    } else if(computerScore == 5) {
+        alert("Computer Wins");
+        playerScore = 0;
+        computerScore = 0;
+        tieScore = 0;
+    }
+}   
