@@ -35,6 +35,51 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game(e) {
+    let currentRound = playRound(this.id, calcComputerPlay());
+    result.textContent = currentRound[0]; // use first index as it contains winner
+
+    // increment the score and update the display from winner
+    if(currentRound[1] == 'player') {
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
+    } else if(currentRound[1] == 'computer') {
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
+    } else{
+        tieScore++;
+        tieScoreDisplay.textContent = tieScore;
+    }
+
+    // check for winning condition of 5 wins
+    if(playerScore == 5) {
+        alert("Player Wins");
+        // reset all scores
+        playerScore = 0;
+        computerScore = 0;
+        tieScore = 0;
+
+        // update score display and result
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
+        tieScoreDisplay.textContent = tieScore;
+        result.textContent = "";
+    } else if(computerScore == 5) {
+        alert("Computer Wins");
+        // reset all scores
+        playerScore = 0;
+        computerScore = 0;
+        tieScore = 0;
+
+        // update score display and result
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
+        tieScoreDisplay.textContent = tieScore;
+        result.textContent = "";
+    }
+}   
+
+// refers to the rock, paper, scissors buttoons
 const playerButtons = document.querySelectorAll('.player-btn');
 
 // these variables only take care of displaying the final results 
@@ -53,35 +98,3 @@ playerButtons.forEach((btn) => {
     btn.addEventListener('click', game);
 });
 
-function game(e) {
-    let currentRound = playRound(this.id, calcComputerPlay());
-    result.classList.toggle("show-result")
-    result.textContent = currentRound[0];
-    console.log(this.id)
-
-    // increment the score and update the display from winner
-    if(currentRound[1] == 'player') {
-        playerScore++;
-        playerScoreDisplay.textContent = playerScore;
-    } else if(currentRound[1] == 'computer') {
-        computerScore++;
-        computerScoreDisplay.textContent = computerScore;
-    } else {
-        tieScore++;
-        tieScoreDisplay.textContent = tieScore;
-    }
-
-    // check for winning condition of 5 wins
-    if(playerScore == 5) {
-        alert("Player Wins");
-        // reset all scores
-        playerScore = 0;
-        computerScore = 0;
-        tieScore = 0;
-    } else if(computerScore == 5) {
-        alert("Computer Wins");
-        playerScore = 0;
-        computerScore = 0;
-        tieScore = 0;
-    }
-}   
