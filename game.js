@@ -95,6 +95,6 @@ let computerScore = 0;
 let tieScore = 0;
 
 playerButtons.forEach((btn) => {
-    btn.addEventListener('click', game);
+    btn.addEventListener('click', playGame);
 });
 
