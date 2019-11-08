@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game(e) {
+function playGame(e) {
     let currentRound = playRound(this.id, calcComputerPlay());
     result.textContent = currentRound[0]; // use first index as it contains winner
 
