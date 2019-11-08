@@ -40,6 +40,10 @@ main {
     grid-column: 2 / 3;
 }
 
+#player-score > span {
+    transition: all ease-out 300ms;
+}
+
 #tie-score {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
@@ -57,6 +61,11 @@ main {
     font-size: 1.6em;
     font-family: 'McLaren', cursive;
     box-shadow: 2px 5px 13px 0px #afafaf;
+    transition: all ease-out 200ms;
+}
+
+.player-btn:hover {
+    transform: scale(1.1);
 }
 
 #rock {

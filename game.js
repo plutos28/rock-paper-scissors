@@ -55,6 +55,7 @@ playerButtons.forEach((btn) => {
 
 function game(e) {
     let currentRound = playRound(this.id, calcComputerPlay());
+    result.classList.toggle("show-result")
     result.textContent = currentRound[0];
     console.log(this.id)
 
